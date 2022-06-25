@@ -9,25 +9,19 @@ nr_letters= int(input("How many letters would you like in your password?\n"))
 nr_symbols = int(input(f"How many symbols would you like?\n"))
 nr_numbers = int(input(f"How many numbers would you like?\n"))
 
-#Eazy Level - Order not randomised:
-#e.g. 4 letter, 2 symbol, 2 number = JduE&!91
-
-#Hard Level - Order of characters randomised:
-#e.g. 4 letter, 2 symbol, 2 number = g^2jk8&P
-
-password = []
+password_list = []
 for i in range (0, nr_letters):
-    password += letters[random.randint(0, len(letters) - 1)]
+    password_list += letters[random.randint(0, len(letters) - 1)]
 
 for i in range (0, nr_numbers):
-    password += numbers[random.randint(0, len(numbers) - 1)]
+    password_list += numbers[random.randint(0, len(numbers) - 1)]
 
 for i in range (0, nr_symbols):
-    password += symbols[random.randint(0, len(symbols) - 1)]
+    password_list += symbols[random.randint(0, len(symbols) - 1)]
     
-random.shuffle(password)
+random.shuffle(password_list)
 
 # CONVERTS THE LIST INTO A STRING
-finalpass = ''.join(password)
-print(f"Your password is: {finalpass}")
+password = ''.join(password_list)
+print(f"Your password is: {password}")
 
